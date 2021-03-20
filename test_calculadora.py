@@ -22,7 +22,14 @@ class TestCalculadora(unittest.TestCase): #Tem comecar com Test
                 x, y, saida = x_y_saida
                 self.assertEqual(soma(x, y), saida)
 
-    
+    def test_soma_x_nao_e_int_ou_float_deve_retornar_assertionerror(self):
+        with self.assertRaises(AssertionError):
+            soma('11', 0)
+
+    def test_soma_y_nao_e_int_ou_float_deve_retornar_assertionerror(self):
+        with self.assertRaises(AssertionError):
+            soma(11, '0')
+
 
 
 unittest.main(verbosity=2)
