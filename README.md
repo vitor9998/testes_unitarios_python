@@ -1,3 +1,3 @@
 # testes_unitarios_python
 
-#Projeto em desenvolvimento
+#Exemplos de testes básicos usando Doctests e Assertions.
