@@ -38,6 +38,7 @@ class TestBaconComOvos(unittest.TestCase):
         for entrada in entradas:
             with self.subTest(entrada=entrada, saida=saida):
                 self.assertEqual(
+                    
                     bacon_com_ovos(entrada),
                     saida,
                     msg=f'"{entrada}" não retornou "{saida}"'
