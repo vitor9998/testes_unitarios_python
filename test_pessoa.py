@@ -2,7 +2,6 @@ import unittest
 from unittest.mock import patch
 from Pessoa import Pessoa
 
-
 class TestPessoa(unittest.TestCase):
     def setUp(self):
         self.p1 = Pessoa('Luiz', 'Otávio')
@@ -23,7 +22,19 @@ class TestPessoa(unittest.TestCase):
         self.assertFalse(self.p1.dados_obtidos)
 
     def test_obter_todos_os_dados_sucesso_OK(self):
-        pass
+        with patch('requests.get') as fake_request:
+            fake_request.return_value.ok = True
+
+            self.assertEqual(self.p1.obter_todos_os_dados(), 'CONECTADO')
+            self.assertTrue(self.p1.dados_obtidos)
+
+    def test_obter_todos_os_dados_falha_404(self):
+        with patch('requests.get') as fake_request:
+            fake_request.return_value.ok = False
+
+            self.assertEqual(self.p1.obter_todos_os_dados(), 'ERRO 404')
+            self.assertFalse(self.p1.dados_obtidos)
+
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
