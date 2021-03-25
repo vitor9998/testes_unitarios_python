@@ -43,7 +43,7 @@ class TestCalculadora(unittest.TestCase): #Tem comecar com Test
 
     def test_soma_y_nao_e_int_ou_float_deve_retornar_assertionerror(self):
         with self.assertRaises(AssertionError):
-            soma(11, '0')
+            soma('11', 0)
 
 
 
