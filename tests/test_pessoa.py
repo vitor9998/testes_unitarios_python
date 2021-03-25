@@ -1,3 +1,19 @@
+try:
+    import sys
+    import os
+
+    sys.path.append(
+        os.path.abspath(
+            os.path.join(
+                os.path.dirname(__file__),
+                '../src'
+            )
+        )
+    )
+except:
+    raise
+
+
 import unittest
 from unittest.mock import patch
 from Pessoa import Pessoa
@@ -65,7 +81,7 @@ class TestPessoa(unittest.TestCase):
             self.assertEqual(self.p1.obter_todos_os_dados(), 'ERRO 404')
             self.assertFalse(self.p1.dados_obtidos)
 
-            
+
 
 
 if __name__ == '__main__':

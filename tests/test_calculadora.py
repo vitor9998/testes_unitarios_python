@@ -1,3 +1,18 @@
+try:
+    import sys
+    import os
+
+    sys.path.append(
+        os.path.abspath(
+            os.path.join(
+                os.path.dirname(__file__),
+                '../src'
+            )
+        )
+    )
+except:
+    raise
+
 import unittest
 from calculadora import soma
 
@@ -32,7 +47,12 @@ class TestCalculadora(unittest.TestCase): #Tem comecar com Test
 
 
 
-unittest.main(verbosity=2)
+if __name__ == '__main__':
+    unittest.main(verbosity=2)
+
+
+#python -m unittest -v
+#código acima é para executar todos os testes de uma vez.
 
 
 
