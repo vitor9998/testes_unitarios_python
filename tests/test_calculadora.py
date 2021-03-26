@@ -18,7 +18,8 @@ from calculadora import soma
 
 class TestCalculadora(unittest.TestCase): #Tem comecar com Test
     def test_soma_5_e_5_deve_retornar_10(self): #Método tem que comecar com test também e deve ser bem descritivo
-        self.assertEqual(soma(5, 5), 10)
+        self.assertEqual(soma(5, 5), 10) #tem vários asserts -> ver a documentação
+        
 
     def test_soma_5_negativo_e_5_deve_retonar_0(self):
         self.assertEqual(soma(-5, 5), 0)
@@ -48,7 +49,7 @@ class TestCalculadora(unittest.TestCase): #Tem comecar com Test
 
 
 if __name__ == '__main__':
-    unittest.main(verbosity=2)
+    unittest.main(verbosity=2) #executa o teste
 
 
 #python -m unittest -v
