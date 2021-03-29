@@ -14,7 +14,7 @@ def soma(x, y):
     AssertionError: x precisa ser int ou float
     '''
     assert isinstance(x, (int, float)), 'x precisa ser int ou float' #se não for vai levantar uma excessão.
-    assert isinstance(x, (int, float)), 'y precisa ser int ou float'
+    assert isinstance(y, (int, float)), 'y precisa ser int ou float'
     return x + y
 
 

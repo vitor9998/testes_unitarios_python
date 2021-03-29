@@ -19,7 +19,7 @@ from calculadora import soma
 class TestCalculadora(unittest.TestCase): #Tem comecar com Test
     def test_soma_5_e_5_deve_retornar_10(self): #Método tem que comecar com test também e deve ser bem descritivo
         self.assertEqual(soma(5, 5), 10) #tem vários asserts -> ver a documentação
-        
+
 
     def test_soma_5_negativo_e_5_deve_retonar_0(self):
         self.assertEqual(soma(-5, 5), 0)
@@ -34,17 +34,17 @@ class TestCalculadora(unittest.TestCase): #Tem comecar com Test
         )
 
         for x_y_saida in x_y_saidas:
-            with self.subTest(x_y_saida=x_y_saida):
+            with self.subTest(x_y_saida=x_y_saida): #Na saída fica mais fácil ver o parâmetro que deu erro
                 x, y, saida = x_y_saida
                 self.assertEqual(soma(x, y), saida)
 
-    def test_soma_x_nao_e_int_ou_float_deve_retornar_assertionerror(self):
+    def test_soma_x_nao_e_int_ou_float_deve_retornar_assertionerror(self): #testa as assertions de calculadora.py
         with self.assertRaises(AssertionError):
             soma('11', 0)
 
     def test_soma_y_nao_e_int_ou_float_deve_retornar_assertionerror(self):
         with self.assertRaises(AssertionError):
-            soma('11', 0)
+            soma(11, '0')
 
 
 
