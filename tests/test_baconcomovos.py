@@ -9,7 +9,12 @@ Parte  2 -> Criar o código e ver o teste passar
 
 Refactor
 Parte 3 -> Melhorar meu código
+
+
 """
+'''No ciclo do TDD precisamos testar as "coisas", depois que vermos o teste falhar
+    vamos criar essa "coisas", depois vamos melhorar essa "coisa".'''
+
 
 try:
     import sys

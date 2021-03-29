@@ -28,7 +28,7 @@ class TestPessoa(unittest.TestCase):
         self.assertEqual(self.p2.nome, 'Maria')
 
     def test_pessoa_attr_nome_e_str(self):
-        self.assertIsInstance(self.p1.nome, str)
+        self.assertIsInstance(self.p1.nome, str) 
         self.assertIsInstance(self.p2.nome, str)
 
     def test_pessoa_attr_sobrenome_tem_o_valor_correto(self):
