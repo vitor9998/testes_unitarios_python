@@ -28,7 +28,7 @@ class TestPessoa(unittest.TestCase):
         self.assertEqual(self.p2.nome, 'Maria')
 
     def test_pessoa_attr_nome_e_str(self):
-        self.assertIsInstance(self.p1.nome, str) 
+        self.assertIsInstance(self.p1.nome, str)
         self.assertIsInstance(self.p2.nome, str)
 
     def test_pessoa_attr_sobrenome_tem_o_valor_correto(self):
@@ -44,6 +44,10 @@ class TestPessoa(unittest.TestCase):
         self.assertFalse(self.p2.dados_obtidos)
 
     def test_obter_todos_os_dados_sucesso_OK(self):
+
+        '''Dados fakes, não quero que o meu teste falhe se o servidor ou API rest ou BD
+estejam down, pois meu teste não tem nada a ver com coisa externa ao meu código.'''
+
         with patch('requests.get') as fake_request:
             fake_request.return_value.ok = True
 
